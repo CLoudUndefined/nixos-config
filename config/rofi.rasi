@@ -1,0 +1,88 @@
+/* MACOS SPOTLIGHT LIKE DARK THEME FOR ROFI - MODIFIED */
+/* Author: Newman Sanchez, Modified by Teiwo */
+
+* {
+    font: "JetBrainsMono Nerd Font 12";
+    bg0: #00202eE6;
+    bg1: #003f5c80;
+    bg2: #ff6361E6;
+    fg0: #ffd380;
+    fg1: #ffffff;
+    fg2: #ffd38080;
+    background-color: transparent;
+    text-color: @fg0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @bg0;
+    location: center;
+    width: 640;
+    border-radius: 10px;
+}
+
+inputbar {
+    font: "JetBrainsMono Nerd Font 14";
+    padding: 14px;
+    spacing: 10px;
+    children: [ icon-search, entry ];
+}
+
+icon-search {
+    expand: false;
+    filename: "search";
+    size: 28px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font: inherit;
+    placeholder: "Search";
+    placeholder-color: @fg2;
+}
+
+message {
+    border: 2px 0 0;
+    border-color: @bg1;
+    background-color: @bg1;
+}
+
+textbox {
+    padding: 10px 24px;
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: false;
+    border: 1px 0 0;
+    border-color: @bg1;
+}
+
+element {
+    padding: 10px 18px;
+    spacing: 18px;
+    background-color: transparent;
+}
+
+element normal active, element alternate active {
+    text-color: @bg2;
+}
+
+element selected normal, element selected active {
+    background-color: #2c4875;
+    text-color: @fg1;
+}
+
+element-icon {
+    size: 1em;
+}
+
+element-text {
+    text-color: inherit;
+}

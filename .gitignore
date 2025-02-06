@@ -1,0 +1,4 @@
+src/wallpapers/*
+!src/wallpapers/put_wallpapers_here
+*HashedPassword
+.bak

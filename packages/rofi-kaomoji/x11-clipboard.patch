@@ -1,0 +1,37 @@
+--- a/rofi-kaomoji	2025-01-16 16:26:40.074898573 +0200
++++ b/rofi-kaomoji	2025-01-16 16:33:30.711204057 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/sh
++#!/usr/bin/env bash
+
+ # NOTE: KAOMOJIS file taken from https://git.sr.ht/~pkal/insert-kaomoji
+ # and turned into more readable .md file
+@@ -25,7 +25,7 @@
+   case $rofi_exit in
+     10) kaomoji_menu "$category" t ;;
+     # delete previously selected kaomoji
+-    11) sed --follow-symlinks -i "/^$(wl-paste -n)$/d" "$moji_path" ;;
++    11) sed --follow-symlinks -i "/^$(xclip -o -selection clipboard)$/d" "$moji_path" ;;
+     0) kaomoji_menu "$category" ;;
+     *) exit ;;
+   esac
+@@ -40,7 +40,7 @@
+ back"
+
+   if [ -n "$random" ]; then
+-    echo "$kaomojis" | head -n -1 | shuf -n 1 | wl-copy -n
++    echo "$kaomojis" | head -n -1 | shuf -n 1 | xclip -i -selection clipboard
+     exit 0
+   fi
+
+@@ -49,8 +49,8 @@
+   if [ "$selection" = "back" ]; then
+     category_menu
+   else
+-    wl-copy -n "$selection"
+-    wtype "$selection"
++    xclip -i -selection clipboard <<< "$selection"
++    xdotool type --clearmodifiers --delay 10 -- "$selection"
+   fi
+ }
+

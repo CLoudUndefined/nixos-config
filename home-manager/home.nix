@@ -22,5 +22,8 @@
       gtk.enable = true;
       x11.enable = true;
     };
+    sessionVariables = {
+      EDITOR = "hx";
+    };
   };
 }

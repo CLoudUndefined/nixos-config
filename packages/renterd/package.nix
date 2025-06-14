@@ -5,8 +5,8 @@ pkgs.stdenv.mkDerivation {
   version = "latest";
 
   src = pkgs.fetchzip {
-    url = "https://sia.tech/downloads/latest/renterd_linux_amd64.zip";
-    sha256 = "sha256-nUNRGL02aAicxoggFvs8poVrMFUiuJxYeQUxj45QUx0=";
+    url = "https://github.com/SiaFoundation/renterd/releases/download/v2.0.0/renterd_linux_amd64.zip";
+    sha256 = "sha256-OCpQqKpSW49Z1dMzdZK3lxCBILeDPv+e70NDDP7lg7M=";
     stripRoot = false;
   };
 

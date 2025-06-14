@@ -4,16 +4,16 @@
  {
  	struct intel_bios_encoder_data *devdata;
  
-+    int ignoreEntry = 0;
++   int ignoreEntry = 0;
 +
  	list_for_each_entry(devdata, &i915->display.vbt.display_devices, node)
 -		func(i915, devdata);
-+    {
-+        if (ignoreEntry != 1)
-+        {
-+            func(i915, devdata);
-+            ignoreEntry++;
-+        }
-+    }
++   {
++       if (ignoreEntry != 1)
++       {
++           func(i915, devdata);
++           ignoreEntry++;
++       }
++   }
  }
 

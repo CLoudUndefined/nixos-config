@@ -1,4 +1,6 @@
 src/wallpapers/*
 !src/wallpapers/put_wallpapers_here
-*HashedPassword
-.bak
+src/passwords/*
+!src/passwords/put_passwords_here
+*.bak
+result/

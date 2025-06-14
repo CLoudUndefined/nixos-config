@@ -19,5 +19,6 @@
       };
       jack.enable = true;
     };
+    flatpak.enable = true;
   };
 }

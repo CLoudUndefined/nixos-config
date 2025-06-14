@@ -2,11 +2,17 @@
 {
   programs = {
     git.enable = true;
+    nano.enable = false;
     dconf.enable = true;
     zsh.enable = true;
     nix-ld.enable = true;
+    mosh.enable = true;
+    neovim.enable = true;
     steam = {
       enable = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin # Это добавит последнюю доступную версию Proton GE
+      ];
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;

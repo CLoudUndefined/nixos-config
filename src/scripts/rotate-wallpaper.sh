@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-WALLPAPERS_DIR="$HOME/nixos-configuration/src/wallpapers"
+WALLPAPERS_DIR="$HOME/.wallpapers"
 
 change_wallpaper() {
     local wallpaper
-    wallpaper=$(find "$WALLPAPERS_DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) | shuf -n1)
+    wallpaper=$(find "$WALLPAPERS_DIR" -type l \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) | shuf -n1)
     
     if [[ -f "$wallpaper" ]]; then
         wal -i "$wallpaper" -q -e

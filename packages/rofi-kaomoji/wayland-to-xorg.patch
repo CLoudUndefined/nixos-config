@@ -1,0 +1,29 @@
+--- a/rofi-kaomoji	2025-03-02 08:05:59.019965713 +0200
++++ b/rofi-kaomoji	2025-03-02 08:41:33.221648704 +0200
+@@ -36,7 +36,7 @@
+   # more robust way of finding moji to delete than something like
+   #   sed --follow-symlinks -i "/^$(wl-paste -n)$/d" "$moji_path" ;;
+   # since many mojis have weird symbols that require escaping
+-  line="$(grep --line-number --fixed-strings "$(wl-paste -n)" "$moji_path" |
++  line="$(grep --line-number --fixed-strings "$(xclip -o -selection clipboard)" "$moji_path" |
+     cut -d: -f 1)"
+ 
+   [ -n "$line" ] && sed --follow-symlinks -i "${line}d" "$moji_path"
+@@ -51,7 +51,7 @@
+ back"
+ 
+   if [ -n "$random" ]; then
+-    echo "$kaomojis" | head -n -1 | shuf -n 1 | wl-copy -n
++    echo "$kaomojis" | head -n -1 | shuf -n 1 | xclip -selection clipboard
+     exit 0
+   fi
+ 
+@@ -60,7 +60,7 @@
+   if [ "$selection" = "back" ]; then
+     category_menu
+   else
+-    wl-copy -n "$selection"
++    xclip -selection clipboard <<< "$selection"
+   fi
+ }
+ 

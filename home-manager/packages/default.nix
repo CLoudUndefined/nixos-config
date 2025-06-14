@@ -1,6 +1,8 @@
 {
   pkgs,
   iwmenu-package,
+  zen-browser-package,
+  prismlauncher,
   ...
 }:
 {
@@ -13,13 +15,24 @@
     file-roller
     direnv
     ollama-cuda
+    aichat
     fastfetch
+    translate-shell
+    hugo
+    shared-mime-info
+    desktop-file-utils
+    ffmpeg-full
+    sqlcmd
+    walk
+    libsForQt5.xp-pen-deco-01-v2-driver
 
     # Productivity
     obsidian
     nautilus
     spotify
     renterd
+    fluent-reader
+    libreoffice-qt6-fresh
 
     # Program
     file-roller
@@ -30,6 +43,13 @@
     qimgv
     qbittorrent
     flameshot
+    peek
+    zathura
+    zen-browser-package
+    prismlauncher
+    dbeaver-bin
+    code-cursor
+    filezilla
 
     # Fonts
     nerd-fonts.jetbrains-mono
@@ -40,9 +60,8 @@
     liberation_ttf
     dejavu_fonts
     inter
-
-    # Games
-    prismlauncher
+    corefonts
+    vistafonts
 
     # Communication
     telegram-desktop
@@ -51,7 +70,7 @@
 
     iwmenu-package
 
-    # ==|FIX|==
-    # rofi-kaomoji
+    rofi-kaomoji
+    unityhub
   ];
 }

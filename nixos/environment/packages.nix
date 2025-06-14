@@ -3,12 +3,10 @@
   environment = {
     systemPackages = with pkgs; [
       home-manager
-      neovim
       wget
       tree
       file
       vulkan-tools
-      mesa
       wireguard-tools
       pingtunnel
       sing-box
@@ -17,6 +15,12 @@
       psmisc
       alsa-utils
       gost3
+      wineWowPackages.stable
+      winetricks
+      tmux
+      pwgen
+      lsof
+      v4l-utils
 
       glib # For hiddify work
 
@@ -26,6 +30,12 @@
           -bios ${pkgs.OVMF.fd}/FV/OVMF.fd \
           "$@"
       '')
+      virt-manager
+
+      umu-launcher
+      protonup-qt
+      steamtinkerlaunch
+      xorg.xrandr
     ];
   };
 }

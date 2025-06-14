@@ -14,6 +14,10 @@
       substituters = [
         "https://cache.nixos.org/"
       ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
     };
     gc = {
       automatic = true;

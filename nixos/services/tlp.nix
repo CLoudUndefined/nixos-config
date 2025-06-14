@@ -1,6 +1,6 @@
 { ... }:
 {
-  services= {
+  services = {
     power-profiles-daemon.enable = false;
     tlp = {
       enable = true;
@@ -14,7 +14,7 @@
         CPU_MIN_PERF_ON_BAT = 0;
         CPU_MAX_PERF_ON_BAT = 80;
 
-        RUNTIME_PM_DRIVER_BLACKLIST = "nvidia";
+        # RUNTIME_PM_DRIVER_BLACKLIST = "nvidia";
         PCIE_ASPM_ON_AC = "default";
         PCIE_ASPM_ON_BAT = "powersave";
 
@@ -27,6 +27,7 @@
         DISK_IOSCHED = "none";
 
         USB_AUTOSUSPEND = 1;
+        USB_AUTOSUSPEND_EXCLUDE_ALL = 0;
         USB_EXCLUDE_AUDIO = 1;
 
         CPU_BOOST_ON_AC = 1;

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 if [ -f /tmp/polybarhidden ]; then
   polybar-msg cmd restart
   bspc config top_padding 38

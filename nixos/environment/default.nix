@@ -8,4 +8,6 @@
     ./xdg.nix
     ./zramswap.nix
   ];
+
+  environment.variables.EDITOR = "nvim";
 }

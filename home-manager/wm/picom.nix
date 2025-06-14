@@ -20,6 +20,7 @@
       "window_type = 'popup_menu'"
       "window_type = 'dropdown_menu'"
       "window_type = 'utility'"
+      "window_type = 'notification'"
     ];
 
     fade = true;
@@ -47,6 +48,7 @@
         "class_g = 'Polybar'"
         "class_g = 'Dunst'"
         "window_type = 'dock'"
+        "window_type = 'notification'"
       ];
 
       shadow-radius = 14;
@@ -62,6 +64,7 @@
         "window_type = 'menu'"
         "window_type = 'popup_menu'"
         "window_type = 'dropdown_menu'"
+        "window_type = 'notification'"
         "class_g = 'Peek'"
         "_GTK_FRAME_EXTENTS@:c"
       ];

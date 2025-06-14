@@ -12,7 +12,7 @@
         rebase = true;
       };
       init = {
-        defaultBranch = "master";
+        defaultBranch = "main";
       };
     };
   };

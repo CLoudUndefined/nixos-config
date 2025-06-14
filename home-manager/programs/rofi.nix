@@ -5,7 +5,7 @@
 }:
 let
   inherit (config.lib.formats.rasi) mkLiteral;
-in 
+in
 {
   programs.rofi = {
     enable = true;
@@ -36,7 +36,10 @@ in
         font = "JetBrainsMono Nerd Font 14";
         padding = mkLiteral "14px";
         spacing = mkLiteral "10px";
-        children = map mkLiteral [ "icon-search" "entry" ];
+        children = map mkLiteral [
+          "icon-search"
+          "entry"
+        ];
       };
 
       "icon-search" = {
@@ -106,25 +109,21 @@ in
 
       display-drun = "Apps";
 
-      # Производительность и поведение
       sort = true;
       sorting-method = "fzf";
       case-sensitive = false;
       cycle = true;
       scroll-method = 1;
 
-      # Клавиатурные сокращения
       kb-remove-to-eol = "Control+k";
       kb-accept-entry = "Return,KP_Enter";
       kb-row-up = "Up,Control+p";
       kb-row-down = "Down,Control+n";
 
-      # Поиск и фильтрация
       matching = "fuzzy";
       tokenize = true;
       drun-display-format = "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 
-      # Производительность
       threads = 0;
       drun-cache-expiry = 60;
     };

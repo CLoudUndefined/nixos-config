@@ -21,9 +21,7 @@
       pwgen
       lsof
       v4l-utils
-
       glib # For hiddify work
-
       qemu
       (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
         qemu-system-x86_64 \
@@ -31,11 +29,9 @@
           "$@"
       '')
       virt-manager
-
       umu-launcher
       protonup-qt
       steamtinkerlaunch
-      xorg.xrandr
     ];
   };
 }

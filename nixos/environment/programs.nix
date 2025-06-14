@@ -11,7 +11,7 @@
     steam = {
       enable = true;
       extraCompatPackages = with pkgs; [
-        proton-ge-bin # Это добавит последнюю доступную версию Proton GE
+        proton-ge-bin
       ];
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;

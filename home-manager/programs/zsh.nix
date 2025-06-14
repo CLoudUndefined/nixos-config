@@ -118,7 +118,6 @@
           local algo=''${1:-${pkgs.coreutils}/bin/sha256sum}
           local file=$2
           if [[ -z "$file" ]]; then
-            # Read from stdin if no file provided
             $algo | awk '{print $1}' | ${pkgs.xxd}/bin/xxd -r -p | base64
           else
             $algo "$file" | ${pkgs.gawk}/bin/awk '{print $1}' | ${pkgs.xxd}/bin/xxd -r -p | ${pkgs.coreutils}/bin/base64

@@ -24,7 +24,6 @@
     ];
 
     fade = true;
-    # fadeSteps = [ 2.5e-2 2.5e-2 ];
     fadeSteps = [
       6.0e-2
       6.0e-2
@@ -40,7 +39,7 @@
     ];
 
     settings = {
-      transition-length = 150; # Умеренная длительность анимации переходов (в мс)
+      transition-length = 150;
       size-transition = true;
 
       corner-radius = 12;

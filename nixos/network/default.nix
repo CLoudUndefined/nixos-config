@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  flakePath,
   ...
 }:
 {
@@ -9,7 +8,6 @@
     mode = "0444";
     source = lib.mkForce (
       pkgs.writeText "resolv.conf" ''
-        # Static resolv.conf pointing to local unbound
         nameserver 127.0.0.1
         options edns0
       ''
@@ -121,65 +119,5 @@
         '';
       };
     };
-  };
-
-  services.zapret = {
-    enable = false; # Включаем сервис Zapret
-
-    params = [
-      "--filter-udp=50000-50100 --filter-l7=discord,stun --dpi-desync=fake --new"
-      "--filter-udp=53-65535 --filter-l7=wireguard --dpi-desync=fake --dpi-desync-repeats=11 --dpi-desync-fake-unknown-udp=/opt/zapret/files/fake/wireguard_initiation.bin --new"
-      "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new"
-      "--filter-tcp=80  --dpi-desync=fake,split2 --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new"
-      "--filter-tcp=443  --dpi-desync=split2 --dpi-desync-split-seqovl=652 --dpi-desync-split-pos=2 --dpi-desync-split-seqovl-pattern=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin"
-    ];
-
-    whitelist = [
-      "googlevideo.com"
-      "googleusercontent.com" # Объединено из двух записей
-      "youtubei.googleapis.com"
-      "youtubeembeddedplayer.googleapis.com"
-      "ytimg.l.google.com"
-      "ytimg.com"
-      "jnn-pa.googleapis.com"
-      "youtube-nocookie.com"
-      "youtube-ui.l.google.com"
-      "yt-video-upload.l.google.com"
-      "wide-youtube.l.google.com"
-      "youtubekids.com"
-      "ggpht.com"
-      "discord.com"
-      "gateway.discord.gg"
-      "cdn.discordapp.com"
-      "discordapp.net"
-      "discordapp.com"
-      "discord.gg"
-      "media.discordapp.net"
-      "images-ext-1.discordapp.net"
-      "discord.app"
-      "discord.media"
-      "discordcdn.com"
-      "discord.dev"
-      "discord.new"
-      "discord.gift"
-      "discordstatus.com"
-      "dis.gd"
-      "discord.co"
-      "discord-attachments-uploads-prd.storage.googleapis.com"
-      "7tv.app"
-      "7tv.io"
-      "10tv.app"
-      "cloudflare-ech.com"
-      "frankerfacez.com"
-      "betterttv.net"
-      "cdn.betterttv.net"
-    ];
-
-    udpSupport = true;
-    udpPorts = [
-      "443"
-      "50000:65535"
-    ];
-
   };
 }

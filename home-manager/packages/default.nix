@@ -7,7 +7,6 @@
 }:
 {
   home.packages = with pkgs; [
-    # Utilities
     dconf
     pywal16
     brightnessctl
@@ -15,26 +14,20 @@
     file-roller
     direnv
     ollama-cuda
-    aichat
+    # aichat
     fastfetch
     translate-shell
-    hugo
     shared-mime-info
     desktop-file-utils
     ffmpeg-full
-    sqlcmd
-    walk
+    # walk
     libsForQt5.xp-pen-deco-01-v2-driver
-
-    # Productivity
     obsidian
     nautilus
     spotify
-    renterd
+    # renterd
     fluent-reader
     libreoffice-qt6-fresh
-
-    # Program
     file-roller
     chromium
     vlc
@@ -45,13 +38,9 @@
     flameshot
     peek
     zathura
-    zen-browser-package
+    # zen-browser-package
     prismlauncher
-    dbeaver-bin
-    code-cursor
     filezilla
-
-    # Fonts
     nerd-fonts.jetbrains-mono
     monocraft
     noto-fonts
@@ -62,15 +51,9 @@
     inter
     corefonts
     vistafonts
-
-    # Communication
     telegram-desktop
     vesktop
-    element-desktop
-
     iwmenu-package
-
     rofi-kaomoji
-    unityhub
   ];
 }
